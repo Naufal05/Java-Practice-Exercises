@@ -45,3 +45,51 @@ console.log(circleValues(15));
  *
  * 3. Return reverse Num
  */
+
+function reverseNumber(num) {
+  var reverse = 0;
+  while (num != 0) {
+    reverse = reverse * 10 + (num % 10);
+    num = Math.trunc(num / 10);
+  }
+  return reverse;
+}
+console.log(reverseNumber(125));
+
+// 7. Count number of Vowels in String
+
+function countVowel(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (
+      str.charAt(i) == "a" ||
+      str.charAt(i) == "e" ||
+      str.charAt(i) == "i" ||
+      str.charAt(i) == "o" ||
+      str.charAt(i) == "u"
+    ) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countVowel("Naufal"));
+
+//8. Flatten array of arrays using JavaScript reduce
+
+//flattens a 2D array by combining each sub array into 1D array by using JavaScript reduce.
+
+//array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+
+function flattenArr(arr) {
+  return arr.reduce((result, array) => result.concat(array));
+}
+
+console.log(
+  flattenArr([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ])
+);
